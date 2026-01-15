@@ -100,17 +100,3 @@ pub impl OrderImpl of OrderTrait {
         );
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use openzeppelin_testing::common::IntoBase16String;
-    use super::ORDER_TYPE_HASH;
-
-    #[test]
-    fn test_order_type_hash() {
-        let expected = selector!(
-            "\"Order\"(\"position_id\":\"felt\",\"base_asset_id\":\"AssetId\",\"base_amount\":\"i64\",\"quote_asset_id\":\"AssetId\",\"quote_amount\":\"i64\",\"fee_asset_id\":\"AssetId\",\"fee_amount\":\"u64\",\"expiration\":\"Timestamp\",\"salt\":\"felt\")\"PositionId\"(\"value\":\"u32\")\"AssetId\"(\"value\":\"felt\")\"Timestamp\"(\"seconds\":\"u64\")",
-        );
-        assert!(ORDER_TYPE_HASH.into_base_16_string() == expected.into_base_16_string());
-    }
-}

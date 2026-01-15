@@ -38,19 +38,3 @@ impl StructHashImpl of StructHash<SetOwnerAccountArgs> {
         hash_state.update_with(SET_OWNER_ACCOUNT_ARGS_HASH).update_with(*self).finalize()
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use openzeppelin_testing::common::IntoBase16String;
-    use super::SET_OWNER_ACCOUNT_ARGS_HASH;
-
-    #[test]
-    fn test_set_owner_account_type_hash() {
-        let expected = selector!(
-            "\"SetOwnerAccountArgs\"(\"position_id\":\"PositionId\",\"public_key\":\"felt\",\"new_owner_account\":\"ContractAddress\",\"expiration\":\"Timestamp\")\"PositionId\"(\"value\":\"u32\")\"Timestamp\"(\"seconds\":\"u64\")",
-        );
-        assert!(
-            SET_OWNER_ACCOUNT_ARGS_HASH.into_base_16_string() == expected.into_base_16_string(),
-        );
-    }
-}

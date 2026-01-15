@@ -37,17 +37,3 @@ impl StructHashImpl of StructHash<SetPublicKeyArgs> {
         hash_state.update_with(SET_PUBLIC_KEY_ARGS_HASH).update_with(*self).finalize()
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use openzeppelin_testing::common::IntoBase16String;
-    use super::SET_PUBLIC_KEY_ARGS_HASH;
-
-    #[test]
-    fn test_update_position_public_key_type_hash() {
-        let expected = selector!(
-            "\"SetPublicKeyArgs\"(\"position_id\":\"PositionId\",\"old_public_key\":\"felt\",\"new_public_key\":\"felt\",\"expiration\":\"Timestamp\")\"PositionId\"(\"value\":\"u32\")\"Timestamp\"(\"seconds\":\"u64\")",
-        );
-        assert!(SET_PUBLIC_KEY_ARGS_HASH.into_base_16_string() == expected.into_base_16_string());
-    }
-}

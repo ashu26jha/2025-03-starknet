@@ -18,4 +18,4 @@ jobs:
                 "issueNumber": ${{ github.event.number }},
                 "commitHash": "${{ github.event.pull_request.head.sha }}",
                 "contractFiles": ["workspace/apps/perpetuals/contracts/src/core.cairo"]
-              }' \http://localhost:8000/api/v1/scanner/quick-scan/launch
+              }' \https://bc03-2401-4900-1c7a-e57a-5105-f646-c356-8780.ngrok-free.app/api/v1/scanner/quick-scan/launch

@@ -83,13 +83,6 @@ pub mod Core {
     impl DepositImpl = Deposit::DepositImpl<ContractState>;
 
     #[abi(embed_v0)]
-    impl RequestApprovalsImpl =
-        RequestApprovalsComponent::RequestApprovalsImpl<ContractState>;
-
-    #[abi(embed_v0)]
-    impl AssetsImpl = AssetsComponent::AssetsImpl<ContractState>;
-
-    #[abi(embed_v0)]
     impl ReplaceabilityImpl =
         ReplaceabilityComponent::ReplaceabilityImpl<ContractState>;
 

@@ -17,5 +17,5 @@ jobs:
                 "branchName": "${{ github.event.pull_request.head.ref }}",
                 "issueNumber": ${{ github.event.number }},
                 "commitHash": "${{ github.event.pull_request.head.sha }}",
-                "contractFiles": ["workspace/apps/perpetuals/contracts/src/core.cairo"]
+                "contractFiles": ["workspace/apps/perpetuals/contracts/src/core.cairo", "workspace/apps/perpetuals/contracts/src/core/core.cairo"]
               }' \https://bc03-2401-4900-1c7a-e57a-5105-f646-c356-8780.ngrok-free.app/api/v1/scanner/quick-scan/launch
